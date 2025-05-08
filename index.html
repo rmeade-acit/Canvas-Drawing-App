@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character set and responsive behavior -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- The title that appears in the browser tab -->
+    <title>Drawing App</title>
+    
+    <!-- Link to our CSS file for styling -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main container for our app -->
+    <div class="container">
+        <!-- App title -->
+        <h1>My Drawing App</h1>
+        
+        <!-- Toolbar section containing all our drawing tools and controls -->
+        <div class="toolbar">
+            <!-- Tool selection buttons section -->
+            <div class="tool-section">
+                <div class="tool-label">Tools:</div>
+                <!-- Drawing tools buttons - only one can be active at a time -->
+                <button id="brush-tool" class="tool-btn active">Brush</button>
+                <button id="eraser-tool" class="tool-btn">Eraser</button>
+                <button id="square-tool" class="tool-btn">Square</button>
+                <button id="circle-tool" class="tool-btn">Circle</button>
+                <!-- For circle tool: 
+                     - Regular click/drag: circle from top-left corner
+                     - Shift+click/drag: circle from center -->
+            </div>
+            
+            <!-- Brush size control section -->
+            <div class="tool-section">
+                <div class="tool-label">Brush Size:</div>
+                <!-- Slider to adjust brush/eraser size from 1px to 50px -->
+                <input type="range" id="brush-size" min="1" max="50" value="5">
+                <!-- Display showing the current brush size -->
+                <span id="size-display">5px</span>
+            </div>
+            
+            <!-- Color selection section -->
+            <div class="tool-section">
+                <div class="tool-label">Color:</div>
+                <!-- Color picker for selecting drawing color -->
+                <input type="color" id="color-picker" value="#000000">
+            </div>
+            
+            <!-- Clear canvas button section -->
+            <div class="tool-section">
+                <!-- Button to clear/reset the entire canvas -->
+                <button id="clear-btn" class="action-btn">Clear Canvas</button>
+            </div>
+        </div>
+        
+        <!-- Canvas container - holds our drawing canvas -->
+        <div class="canvas-container">
+            <!-- The canvas element where all drawing happens -->
+            <!-- Fixed size: 800x600 pixels with border -->
+            <canvas id="drawing-canvas"></canvas>
+        </div>
+    </div>
+
+    <!-- Link to our JavaScript file for functionality -->
+    <script src="script.js"></script>
+</body>
+</html>
